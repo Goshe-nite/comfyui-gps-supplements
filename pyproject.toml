@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-gps-supplements"
+description = "Nodes to make ComfyUI-Image-Saver and rgthree-comfy more compatible. Allowing Power Lora Loader node to be used with Image Saver node. Also adding nodes to extract Image Saver compatible strings to simplify workflows."
+version = "1.0.0"
+license = { file = "LICENSE" }
+dependencies = [""]
+
+[project.urls]
+Repository = "https://github.com/Goshe-nite/comfyui-gps-supplements"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "Goshe-nite"
+DisplayName = "ComfyUI GPS Supplements"
+Icon = ""
