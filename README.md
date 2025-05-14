@@ -11,10 +11,17 @@ Nodes to make [ComfyUI-Image-Saver](https://github.com/alexopus/ComfyUI-Image-Sa
 **KSampler to Image Saver**: connect to KSampler or nodes alike to extract data compatible with Image Saver (comfyui-image-saver), data includes seed, steps, cfg, sampler name, scheduler, denoise. Can retrieve data even if KSampler takes input from other nodes. Input boxes are provided as fallback options if other nodes missing some options are connected as input. 
 
 ## Installation
-Open a terminal from ComfyUI folder, in the terminal, do:
-- `cd custom_nodes`
-- `git clone https://github.com/Goshe-nite/comfyui-gps-supplements.git`
-- Restart ComfyUI
+1. Installation with ComfyUI Manager:
+  - In ComfyUI Manager, open custom nodes manager
+  - Search for 'GPS' Supplements for ComfyUI'
+  - Install the custom nodes
+  - Restart ComfyUI
+
+2. Installation with git:
+  Open a terminal from ComfyUI folder, in the terminal, do:
+  - `cd custom_nodes`
+  - `git clone https://github.com/Goshe-nite/comfyui-gps-supplements.git`
+  - Restart ComfyUI
 
 ## Example Workflow
 Example workflow provided in examples folder.
