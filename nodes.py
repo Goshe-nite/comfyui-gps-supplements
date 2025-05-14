@@ -36,6 +36,10 @@ class modelToString:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "get_model"
     CATEGORY = "GPSupps"
+    DESCRIPTION = """
+Connect to model node to turn the model name (with the partial path if exist) to a string, detects model name by widget name 
+*_name. 
+"""
 
     def get_model(self, extra_pnginfo, prompt, unique_id, model=None):
         workflow = extra_pnginfo["workflow"]
@@ -95,6 +99,10 @@ class loraToString:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "get_rgthree_loras"
     CATEGORY = "GPSupps"
+    DESCRIPTION = """
+Connect to power lora loader (rgthree) to output a string list of loras with their strengths,
+in the format <lora1:strength><lora2:strength>.... 
+"""
 
     def get_rgthree_loras(self, extra_pnginfo, prompt, unique_id, lora_loader=None):
         workflow = extra_pnginfo["workflow"]
@@ -159,6 +167,11 @@ class loraPromptConcat:
     RETURN_NAMES = ("positive",)
     FUNCTION = "conditioning_to_string"
     CATEGORY = "GPSupps"
+    DESCRIPTION = """
+Connect to a power lora loader (rgthree) and text positive prompt to output a concatenated string 
+of the prompt and loras with their strengths (in the format <lora:strength>), designed for comfyui-image-saver, for 
+adding lora information to civitai compatible images. 
+"""
 
     def conditioning_to_string(self, extra_pnginfo, prompt, unique_id, positive, lora_loader=None):
         workflow = extra_pnginfo["workflow"]
@@ -359,6 +372,9 @@ class gpsDebug:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "getdata"
     CATEGORY = "GPSupps"
+    DESCRIPTION = """
+For debugging use, connect to any node's output to see data carried by node.
+"""
 
     def getdata(self, extra_pnginfo, prompt, unique_id, any_input=None):
         workflow = extra_pnginfo["workflow"]
