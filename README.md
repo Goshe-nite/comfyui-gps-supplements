@@ -6,9 +6,11 @@ Nodes to make [ComfyUI-Image-Saver](https://github.com/alexopus/ComfyUI-Image-Sa
 
 **Lora Prompt Concatenation**: connect Power Lora Loader (rgthree) and positive prompt string as input to get formatted positive prompt compatible with Image Saver (comfyui-image-saver).
 
-**Model to String**: connect checkpoint loader as input to get checkpoint name as string output.
+**Model to String**: connect checkpoint loader as input to get checkpoint name as string output. Walks the model chain back to the loader, so it also works when intermediate nodes (for example ModelSamplingFlux) sit between the loader and this node.
 
-**KSampler to Image Saver**: connect to KSampler or nodes alike to extract data compatible with Image Saver (comfyui-image-saver), data includes seed, steps, cfg, sampler name, scheduler, denoise. Can retrieve data even if KSampler takes input from other nodes. Input boxes are provided as fallback options if other nodes missing some options are connected as input. 
+**KSampler to Image Saver**: connect to KSampler or nodes alike to extract data compatible with Image Saver (comfyui-image-saver), data includes seed, steps, cfg, sampler name, scheduler, denoise, and model name (walked from the KSampler model input back to the loader). Can retrieve data even if KSampler takes input from other nodes. Input boxes are provided as fallback options if other nodes missing some options are connected as input. 
+
+All nodes work inside subgraphs (grouped nodes with ids like `60:56`).
 
 ## Installation
 1. Installation with ComfyUI Manager:
